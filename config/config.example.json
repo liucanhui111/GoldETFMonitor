@@ -1,0 +1,537 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "note": "所有参数均可在程序『设置』页面修改；修改后立即生效。"
+  },
+  "app": {
+    "refresh_minutes": 60,
+    "timeout_seconds": 10,
+    "max_retries": 3,
+    "history_years": 5,
+    "log_level": "INFO",
+    "autostart": false,
+    "autostart_times": [
+      "09:00",
+      "18:00"
+    ],
+    "host_fail_threshold": 2,
+    "host_block_minutes": 15,
+    "host_probe_timeout": 6,
+    "macro_budget_seconds": 45,
+    "fetch_workers": 3,
+    "simple_mode": true,
+    "ua_fallback": true,
+    "curl_fallback": true
+  },
+  "data_sources": {
+    "ths_api_key": "在这里填你的Key",
+    "ths_base": "https://fuyao.aicubes.cn",
+    "etf_primary": "ths",
+    "etf_fallback": "tencent",
+    "yahoo_enabled": true,
+    "fred_enabled": true,
+    "fear_greed_url": "",
+    "bpgdm_url": "",
+    "bpgdm_use_stockq_mirror": true,
+    "cache_ttl_minutes": {
+      "etf": 60,
+      "macro": 1440,
+      "sentiment": 1440
+    },
+    "realtime_quote": true,
+    "ths_timeout_seconds": 20,
+    "bpgdm_use_reader": true
+  },
+  "portfolio": {
+    "id": "all_weather_01",
+    "name": "当前全天候组合",
+    "total_assets": 112564.0,
+    "cash": null,
+    "target_class": {
+      "bond": 0.5,
+      "stock": 0.45,
+      "gold": 0.05
+    },
+    "gold_max": 0.05,
+    "gold_min": 0.0,
+    "stock_max": 0.5,
+    "batch_count": 4,
+    "rebalance_watch_pct": 3.0,
+    "rebalance_priority_pct": 5.0,
+    "note": "持仓账户隔离：本组合只读取下面 assets 里的持仓，绝不与其他组合/其他账户的历史持仓混用。",
+    "cash_note": "总资产含待投资现金。填了 total_assets 就自动算现金 = 总资产 - ETF市值；也可直接把 total_assets 留空、改填 cash。"
+  },
+  "decision": {
+    "note": "组合买入门槛：优先使用【样本外】60日盈利概率；样本外不可用时降级并降低买入信心。",
+    "use_oos_first": true,
+    "probe_position_hi_pct": 80,
+    "probe_bias_hi_pct": 4.0,
+    "entry_score_trigger": 70,
+    "first_batch_factor_probe": 0.5,
+    "consistency_tolerance_pct": 0.5
+  },
+  "trust": {
+    "buy_permission_min_level": "辅助交易级"
+  },
+  "assets": [
+    {
+      "id": "511220",
+      "thscode": "511220.SH",
+      "ticker": "511220",
+      "exchange": "SH",
+      "name": "城投债ETF海富通",
+      "asset_class": "bond",
+      "style": "credit",
+      "shares": 2500,
+      "cost": null,
+      "target_weight": 0.25,
+      "max_weight": 0.3,
+      "min_weight": 0.15,
+      "swing_threshold_pct": [
+        1.5,
+        3.0
+      ],
+      "enabled": true
+    },
+    {
+      "id": "511090",
+      "thscode": "511090.SH",
+      "ticker": "511090",
+      "exchange": "SH",
+      "name": "30年国债ETF鹏扬",
+      "asset_class": "bond",
+      "style": "duration",
+      "shares": 200,
+      "cost": null,
+      "target_weight": 0.25,
+      "max_weight": 0.3,
+      "min_weight": 0.15,
+      "swing_threshold_pct": [
+        1.5,
+        3.0
+      ],
+      "enabled": true
+    },
+    {
+      "id": "159941",
+      "thscode": "159941.SZ",
+      "ticker": "159941",
+      "exchange": "SZ",
+      "name": "纳指ETF广发",
+      "asset_class": "stock",
+      "style": "overseas_growth",
+      "shares": 5500,
+      "cost": null,
+      "target_weight": 0.2,
+      "max_weight": 0.25,
+      "min_weight": 0.08,
+      "swing_threshold_pct": [
+        3.0,
+        5.0
+      ],
+      "enabled": true
+    },
+    {
+      "id": "513530",
+      "thscode": "513530.SH",
+      "ticker": "513530",
+      "exchange": "SH",
+      "name": "港股通红利ETF华泰柏瑞",
+      "asset_class": "stock",
+      "style": "hk_dividend",
+      "shares": 4400,
+      "cost": null,
+      "target_weight": 0.15,
+      "max_weight": 0.2,
+      "min_weight": 0.05,
+      "swing_threshold_pct": [
+        3.0,
+        5.0
+      ],
+      "enabled": true
+    },
+    {
+      "id": "159915",
+      "thscode": "159915.SZ",
+      "ticker": "159915",
+      "exchange": "SZ",
+      "name": "创业板ETF易方达",
+      "asset_class": "stock",
+      "style": "cn_growth",
+      "shares": 2300,
+      "cost": null,
+      "target_weight": 0.1,
+      "max_weight": 0.15,
+      "min_weight": 0.03,
+      "swing_threshold_pct": [
+        3.0,
+        5.0
+      ],
+      "enabled": true
+    },
+    {
+      "id": "159937",
+      "thscode": "159937.SZ",
+      "ticker": "159937",
+      "exchange": "SZ",
+      "name": "黄金ETF博时",
+      "asset_class": "gold",
+      "style": "gold",
+      "shares": 1900,
+      "cost": 11.882,
+      "target_weight": 0.05,
+      "max_weight": 0.05,
+      "min_weight": 0.0,
+      "swing_threshold_pct": [
+        4.0,
+        6.0
+      ],
+      "enabled": true
+    }
+  ],
+  "simulation": {
+    "note": "组合边际模拟：第一批金额不再固定为『目标缺口/N』，而由『买入后整个组合的风险收益改善』决定；0 元最优时输出 WAIT。",
+    "amount_grid": [
+      0,
+      500,
+      1000,
+      1500,
+      2000,
+      3000,
+      4000,
+      5000
+    ],
+    "cash_fractions": [
+      0.1,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "max_grid_points": 9,
+    "max_amount_per_asset": 20000,
+    "effective_tolerance": 1.0,
+    "min_improve": 1.0,
+    "report_top_amounts": 8,
+    "max_candidates": 6,
+    "rebalance_levels_pct": [
+      10,
+      8,
+      5
+    ],
+    "auto_batch_from_best": true,
+    "first_batch_cap_pct_of_cash": 33,
+    "first_batch_cap_pct_of_gap": 50,
+    "marginal_weights": {
+      "prob60": 0.28,
+      "exp60": 0.22,
+      "dd1y": 0.18,
+      "vol": 0.1,
+      "sharpe": 0.1,
+      "div": 0.07,
+      "gap": 0.05
+    },
+    "marginal_spans": {
+      "prob60": 8.0,
+      "exp60": 2.5,
+      "dd1y": 2.5,
+      "vol": 3.0,
+      "sharpe": 0.4,
+      "div": 8.0,
+      "gap": 5.0
+    },
+    "hint": "边际改善分 50 = 与不交易完全一样。effective_tolerance：分数相差在该范围内视为『同样好』，取更省钱的方案；min_improve：改善小于该值就不值得买 → WAIT。"
+  },
+  "dynamic_allocation": {
+    "note": "战术区间：仅调整股票/债券内部比例，黄金永不超过 gold_max",
+    "normal": {
+      "bond": [
+        0.5,
+        0.5
+      ],
+      "stock": [
+        0.45,
+        0.45
+      ],
+      "gold": [
+        0.0,
+        0.05
+      ]
+    },
+    "risk_on": {
+      "bond": [
+        0.45,
+        0.5
+      ],
+      "stock": [
+        0.45,
+        0.5
+      ],
+      "gold": [
+        0.0,
+        0.05
+      ]
+    },
+    "risk_off": {
+      "bond": [
+        0.5,
+        0.6
+      ],
+      "stock": [
+        0.35,
+        0.45
+      ],
+      "gold": [
+        0.0,
+        0.05
+      ]
+    },
+    "crisis": {
+      "bond": [
+        0.55,
+        0.65
+      ],
+      "stock": [
+        0.3,
+        0.4
+      ],
+      "gold": [
+        0.0,
+        0.05
+      ]
+    }
+  },
+  "indicators": {
+    "ma_windows": [
+      5,
+      10,
+      20,
+      30,
+      50,
+      60,
+      120,
+      200
+    ],
+    "macd": {
+      "fast": 12,
+      "slow": 26,
+      "signal": 9
+    },
+    "rsi_window": 14,
+    "atr_window": 14,
+    "wr_window": 14,
+    "bias_window": 20,
+    "return_window": 20,
+    "drawdown_windows": {
+      "1y": 252,
+      "2y": 504,
+      "5y": 1260
+    },
+    "relpos_windows": {
+      "1y": 252,
+      "2y": 504
+    },
+    "high_low_windows": {
+      "60d": 60,
+      "120d": 120,
+      "52w": 252
+    }
+  },
+  "classification": {
+    "return20_pct": {
+      "fast_up": 15.0,
+      "up": 5.0,
+      "flat_up": 2.0,
+      "flat_down": -2.0,
+      "down": -5.0,
+      "deep_down": -15.0
+    },
+    "bias20_pct": {
+      "very_high": 8.0,
+      "high": 4.0,
+      "low": -4.0,
+      "very_low": -8.0
+    },
+    "relpos_bands": [
+      20,
+      35,
+      65,
+      80
+    ],
+    "wr_bands": [
+      -20,
+      -50,
+      -80
+    ]
+  },
+  "swing": {
+    "note": "波段阈值使用 ATR 倍数；同时保留百分比阈值 swing_threshold_pct",
+    "atr_multiplier": {
+      "stock": 2.0,
+      "gold": 2.5,
+      "bond": 2.0
+    },
+    "confirm_atr_multiplier": {
+      "stock": 3.0,
+      "gold": 3.5,
+      "bond": 2.5
+    },
+    "confirm_fresh_bars": 30,
+    "pivot_lookback": 5,
+    "min_bars_between_pivots": 5,
+    "near_low_pct": 3.0,
+    "near_high_pct": 3.0
+  },
+  "hist": {
+    "horizons": [
+      5,
+      20,
+      30,
+      60,
+      90,
+      120
+    ],
+    "min_train_days": 300,
+    "min_samples": 50,
+    "n_neighbors": 200,
+    "cooldown_days": 10,
+    "cooldown_min": 3,
+    "distance_cap_mult": 3.0,
+    "allow_distance_relax": false,
+    "oos_window_days": 378,
+    "feature_weights": {
+      "trend": 1.0,
+      "position": 1.0,
+      "shortterm": 1.0,
+      "swing": 1.2,
+      "bias20": 1.0,
+      "ret20": 1.0,
+      "wr": 0.8,
+      "rsi": 0.8,
+      "dd1y": 1.0,
+      "dd2y": 0.8,
+      "relpos1y": 1.2,
+      "relpos2y": 1.0,
+      "vol20": 0.6
+    },
+    "sample_grade": {
+      "severe": 20,
+      "low": 50,
+      "fair": 100,
+      "good": 200
+    }
+  },
+  "scores": {
+    "buy_score": {
+      "trend_quality": 15,
+      "low_position": 12,
+      "short_term_oversold": 12,
+      "swing_bottom": 11,
+      "hist_prob_60": 20,
+      "expected_return_60": 15,
+      "risk_control": 10,
+      "portfolio_gap": 5
+    },
+    "entry_quality": {
+      "hist_prob_60": 25,
+      "expected_return_60": 20,
+      "payoff_ratio": 15,
+      "risk_60": 15,
+      "technical_confirm": 10,
+      "relative_position": 10,
+      "swing_state": 5
+    },
+    "portfolio_quality": {
+      "prob_60": 25,
+      "prob_120": 15,
+      "expected_return_60": 20,
+      "max_drawdown": 15,
+      "volatility": 10,
+      "diversification": 10,
+      "position_reasonableness": 5
+    },
+    "entry_score": {
+      "prob_60": 25,
+      "exp_60": 20,
+      "payoff": 15,
+      "max_dd": 15,
+      "market_state": 10,
+      "trend": 5,
+      "position": 5,
+      "diversification": 5
+    },
+    "entry_gate": {
+      "S": {
+        "prob_60": 70,
+        "exp_ret_60": 4.0
+      },
+      "A": {
+        "prob_60": 65,
+        "exp_ret_60": 2.0
+      },
+      "B": {
+        "prob_60": 58,
+        "exp_ret_60": 0.0
+      },
+      "C": {
+        "prob_60": 50,
+        "exp_ret_60": null
+      }
+    },
+    "etf_grade": {
+      "A": {
+        "prob_60": 65,
+        "exp_ret_60": 2.0,
+        "payoff": 1.5,
+        "min_samples": 50
+      },
+      "B": {
+        "prob_60": 58,
+        "exp_ret_60": 0.0
+      },
+      "C": {
+        "prob_60": 50
+      },
+      "D": {
+        "prob_60": 0
+      }
+    }
+  },
+  "risk": {
+    "risk_free_rate": 0.02,
+    "trading_days_per_year": 252,
+    "correlation_windows": {
+      "20d": 20,
+      "60d": 60,
+      "120d": 120,
+      "1y": 252
+    },
+    "var_confidence": 0.95
+  },
+  "cost": {
+    "trade_cost_pct": 0.2
+  },
+  "backtest": {
+    "rebalance_freq_days": 21,
+    "thresholds_pct": [
+      3.0,
+      5.0,
+      10.0
+    ],
+    "costs": {
+      "commission": 0.0001,
+      "slippage": 0.0019
+    },
+    "walk_forward": {
+      "train_days": 504,
+      "test_days": 63,
+      "step_days": 63
+    }
+  },
+  "gold": {
+    "radar": {
+      "use_sentiment_proxy_when_official_missing": false
+    }
+  },
+  "portfolios": {}
+}

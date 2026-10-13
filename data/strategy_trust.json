@@ -1,0 +1,8 @@
+{
+  "trust_level": "研究级",
+  "computed_at": "2026-10-07 08:19:57",
+  "independent_events": null,
+  "lift_pp": -2.8,
+  "brier_skill_score": null,
+  "note": "由 --validate-strategy 生成；运行期据此判定买入权限（可信等级决定买入权限，不是买入等级）"
+}

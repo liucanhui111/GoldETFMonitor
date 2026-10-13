@@ -1,0 +1,2 @@
+﻿date,ts,entry_grade,action,allowed_batches,market_state,risk_score,quality_score,prob60,exp60,wait_ratio_pct,gold_pct,summary
+2026-10-04,2026-10-04 15:25:19,C,再平衡,0,Risk On,27.4,82.9,92.1,4.71,0.0,34.44,组合处于 Risk On 状态，风险评分 27.4/100，Portfolio Quality 82.9/100。 | 未来60日历史盈利概率 92.1%，期望收益 4.71%，信号等级 C（WAIT）。 | 优先关注：城投债ETF海富通（机会分 64.9，B 级）、黄金ETF博时（机会分 58.9，B 级）、港股通红利ETF华泰柏瑞（机会分 57.0，B 级）。

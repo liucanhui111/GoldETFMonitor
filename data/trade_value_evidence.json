@@ -1,0 +1,11 @@
+{
+  "ts": "2026-10-07 13:58:03",
+  "independent_events_60": 2,
+  "buy_mean_net_pp_60": 0.0751,
+  "reduce_mean_net_pp_60": 0.7315,
+  "rebalance_mean_net_pp_60": 0.2071,
+  "sell_positive": false,
+  "can_claim_effectiveness": false,
+  "verdict": "② 数据样本不足（独立事件 <30，任何正/负增量都不具统计意义） —— 保持研究级",
+  "note": "由 --validate-trades 生成；运行期 TRADE VALUE GATE 据此判断交易是否有正增量"
+}

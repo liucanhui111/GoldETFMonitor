@@ -1,0 +1,2 @@
+﻿date,ts,total_value,weights_source,bond_pct,stock_pct,gold_pct,risk_score,market_state,quality_score,prob20,prob60,prob120,exp60,dd1y,dd1y_max,dd2y_max,vol_annual,entry_grade,action
+2026-10-04,2026-10-04 15:25:19,112563.6,按持仓市值计算,44.54,21.02,34.44,27.4,Risk On,82.9,85.3,92.1,93.5,4.71,-7.016722239343487,-10.240295857569482,-10.240295857569482,8.13,C,再平衡

@@ -1,0 +1,31 @@
+# ---- 构建产物 / 打包临时（重建即可，绝不入库）----
+dist/
+_buildtmp*/
+_distnew*/
+_archive/
+__shots/
+build/
+
+# ---- 运行时产物 ----
+logs/
+data/cache/
+data/export/
+*.log
+
+# ---- 敏感配置：含真实 API Key（sk-fuyao-...），只入库 example 模板 ----
+config/config.json
+
+# ---- Python ----
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ---- 系统/编辑器 ----
+Thumbs.db
+desktop.ini
+.workbuddy/
+
+# ---- 配置备份（含真实 Key，绝不入库）----
+config/config.backup-*.json
+config/*.jsonc.bak
